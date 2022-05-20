@@ -43,5 +43,20 @@ exports.signUp = async (req, res) => {
         })
     }
 }
-// exports.forgotPassword = '';
-// exports.resetPassword = '';
+exports.forgotPassword = async (req, res) => {
+    try{
+        const user = await User.findOne({email : req.body.email});
+        if(!user) return res.status(400).json('user not found');
+
+        //generate random reset token
+        const resetToken = user.resetPassword();
+        await user.save();
+        res.status(200).json({
+            resetToken : resetToken
+        })
+    }catch (error){
+        res.status(500).json({
+            error : error.message
+        })
+    }
+};
