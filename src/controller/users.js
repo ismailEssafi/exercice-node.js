@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const User = require('../models/user.js');
-
+const sendEmail = require('../utils/email');
 
 exports.signIn = async (req, res) => {
 
@@ -51,8 +51,18 @@ exports.forgotPassword = async (req, res) => {
         //generate random reset token
         const resetToken = user.resetPassword();
         await user.save();
+
+        const resetUrl = `${req.protocol}://${req.get('host')}/api/users/resetPassword/${resetToken}`;
+        const message = `if you forgot your password click here : ${resetUrl}`;
+
+        await sendEmail({
+            email : user.email,
+            subject : 'this email expire after 10 min',
+            message : message
+        })
+
         res.status(200).json({
-            resetToken : resetToken
+            status : 200
         })
     }catch (error){
         res.status(500).json({
