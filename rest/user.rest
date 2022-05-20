@@ -1,0 +1,13 @@
+@url=http://localhost:3000/api/users/
+
+###
+POST {{url}}signUp HTTP/1.1
+content-type: application/json
+
+{
+    "name" : "ismail essafi",
+    "email" : "issmail.essafi@gmail.com",
+    "password" : "password"
+}
+
+
