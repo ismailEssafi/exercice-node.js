@@ -2,6 +2,8 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const User = require('../models/user.js');
 const sendEmail = require('../utils/email');
+const crypto = require('crypto');
+
 
 exports.signIn = async (req, res) => {
 
@@ -52,7 +54,7 @@ exports.forgotPassword = async (req, res) => {
         const resetToken = user.resetPassword();
         await user.save();
 
-        const resetUrl = `${req.protocol}://${req.get('host')}/api/users/resetPassword/${resetToken}`;
+        const resetUrl = `${req.protocol}://${req.get('host')}/api/authentication/resetPassword/${resetToken}`;
         const message = `if you forgot your password click here : ${resetUrl}`;
 
         await sendEmail({
@@ -70,3 +72,29 @@ exports.forgotPassword = async (req, res) => {
         })
     }
 };
+
+exports.resetPassword = async (req, res) => {
+    try {
+        //get user base in token
+        const hashedToken = crypto.createHash('sha256').update(req.params.token).digest('hex');
+        const user = await User.findOne({
+            passwordResetToken : String(hashedToken),
+            passwordResetExpireTime : { $gt : Date.now() }
+        })
+
+        if(!user) return res.status(400).json('token is invalid or expired');
+        
+        user.password = req.body.password;
+        user.passwordResetToken = null;
+        user.passwordResetExpireTime = null;
+        await user.save();
+        res.status(200).json({
+            status : 200,
+            user : user
+        })
+    } catch (error) {
+        res.status(500).json({
+            error : error.message
+        })
+    }
+}

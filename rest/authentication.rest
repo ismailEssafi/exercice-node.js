@@ -1,0 +1,37 @@
+@url=http://localhost:3000/api/authentication/
+
+###
+POST {{url}}signUp HTTP/1.1
+content-type: application/json
+
+{
+    "name" : "ismail essafi",
+    "email" : "issmail.essafi@gmail.com",
+    "password" : "password"
+}
+
+###
+POST {{url}}signIn HTTP/1.1
+content-type: application/json
+
+{
+    "email" : "issmail.essafi@gmail.com",
+    "password" : "password4"
+}
+
+###
+POST {{url}}forgotPassword HTTP/1.1
+content-type: application/json
+
+{
+    "email" : "issmail.essafi@gmail.com"
+}
+
+###
+POST {{url}}resetPassword/07785e4d5493bd659085e39c7e3b73cefbbf2e60bf4f837eaa429408ed354822 HTTP/1.1
+content-type: application/json
+
+{
+    "password" : "password4"
+}
+
