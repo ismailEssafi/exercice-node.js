@@ -6,7 +6,7 @@ content-type: application/json
 
 {
     "name" : "ismail essafi",
-    "email" : "issmail.essafi@gmail.com",
+    "email" : "issmssail.essafi@gmail.com",
     "password" : "password"
 }
 
@@ -15,8 +15,8 @@ POST {{url}}signIn HTTP/1.1
 content-type: application/json
 
 {
-    "email" : "issmail.essafi@gmail.com",
-    "password" : "password4"
+    "email" : "issmssail.essafi@gmail.com",
+    "password" : "password"
 }
 
 ###

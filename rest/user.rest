@@ -3,6 +3,7 @@
 ###
 POST {{url}} HTTP/1.1
 content-type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODgwMGY4YzQ2Y2NiODQ3MzdjYTI4NiIsImlhdCI6MTY1MzA4MDMxMiwiZXhwIjoxNjYwODU2MzEyfQ.bcmROedLaKeLAk3g1tj4h-Pxly0Gz0QVz_qyqOkmzzc
 
 {
     "name" : "omar ",
@@ -13,15 +14,18 @@ content-type: application/json
 ###
 GET {{url}} HTTP/1.1
 content-type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODgwMGY4YzQ2Y2NiODQ3MzdjYTI4NiIsImlhdCI6MTY1MzA4MDMxMiwiZXhwIjoxNjYwODU2MzEyfQ.bcmROedLaKeLAk3g1tj4h-Pxly0Gz0QVz_qyqOkmzzc
 
 ###
 GET   {{url}}/6287f5f69fb76eca9785c487 HTTP/1.1
 content-type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODgwMGY4YzQ2Y2NiODQ3MzdjYTI4NiIsImlhdCI6MTY1MzA4MDMxMiwiZXhwIjoxNjYwODU2MzEyfQ.bcmROedLaKeLAk3g1tj4h-Pxly0Gz0QVz_qyqOkmzzc
 
 
 ###
 PATCH {{url}}/6287f5f69fb76eca9785c487 HTTP/1.1
 content-type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODgwMGY4YzQ2Y2NiODQ3MzdjYTI4NiIsImlhdCI6MTY1MzA4MDMxMiwiZXhwIjoxNjYwODU2MzEyfQ.bcmROedLaKeLAk3g1tj4h-Pxly0Gz0QVz_qyqOkmzzc
 
 {
     "name" : "issmail essafi"
@@ -30,3 +34,4 @@ content-type: application/json
 ###
 DELETE  {{url}}/6287f4441b8736c0cc01c659 HTTP/1.1
 content-type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODgwMGY4YzQ2Y2NiODQ3MzdjYTI4NiIsImlhdCI6MTY1MzA4MDMxMiwiZXhwIjoxNjYwODU2MzEyfQ.bcmROedLaKeLAk3g1tj4h-Pxly0Gz0QVz_qyqOkmzzc
