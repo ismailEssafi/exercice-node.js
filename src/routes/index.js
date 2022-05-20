@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express.Router();
-const users = require('./authentication')
+const authentication = require('./authentication')
+const users = require('./users')
 
-app.use('/authentication', users)
+app.use('/authentication', authentication)
+app.use('/users', users)
 
 module.exports = app;
