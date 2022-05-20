@@ -45,8 +45,7 @@ exports.get = async (req, res) => {
 
 exports.update = async (req, res) => {
     try{
-        const user = await User.findByIdAndUpdate({_id :req.params.id}, req.body);
-        
+        const user = await User.findOneAndUpdate({_id : req.params.id}, req.body, { new: true });
         res.status(200).json({
             status: 'succes',
             data : user,

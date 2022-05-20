@@ -20,11 +20,11 @@ content-type: application/json
 
 
 ###
-PATCH {{url}}/6287a303db5f6964901b1ef0 HTTP/1.1
+PATCH {{url}}/6287f5f69fb76eca9785c487 HTTP/1.1
 content-type: application/json
 
 {
-    "name" : "ssmail essafi"
+    "name" : "issmail essafi"
 }
 
 ###
