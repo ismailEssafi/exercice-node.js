@@ -10,4 +10,12 @@ content-type: application/json
     "password" : "password"
 }
 
+###
+POST {{url}}signIn HTTP/1.1
+content-type: application/json
+
+{
+    "email" : "issmail.essafi@gmail.com",
+    "password" : "password"
+}
 
