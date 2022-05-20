@@ -5,14 +5,28 @@ POST {{url}} HTTP/1.1
 content-type: application/json
 
 {
-    "name" : "walid",
-    "email" : "waliyd@gmail.com",
+    "name" : "omar ",
+    "email" : "omar@gmail.com",
     "password" : "password"
 }
 
+###
+GET {{url}} HTTP/1.1
+content-type: application/json
 
 ###
-GET  {{url}} HTTP/1.1
+GET   {{url}}/6287f5f69fb76eca9785c487 HTTP/1.1
 content-type: application/json
 
 
+###
+PATCH {{url}}/6287a303db5f6964901b1ef0 HTTP/1.1
+content-type: application/json
+
+{
+    "name" : "ssmail essafi"
+}
+
+###
+DELETE  {{url}}/6287f4441b8736c0cc01c659 HTTP/1.1
+content-type: application/json
